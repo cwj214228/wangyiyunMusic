@@ -10,7 +10,7 @@ from twisted.enterprise import adbapi
 
 class WangyiyunmusicPipeline(object):
     def open_spider(self, spider):
-        self.workbook = xlsxwriter.Workbook('D:/爬虫数据/'+time.strftime("wangyiyun")+'.xlsx')  # 创建一个Excel文件
+        self.workbook = xlsxwriter.Workbook('D:/爬虫数据/'+"wangyiyun"+'.xlsx')  # 创建一个Excel文件
         self.worksheet = self.workbook.add_worksheet()  # 创建一个sheet
         self.num0=0
 
