@@ -10,16 +10,18 @@ from twisted.enterprise import adbapi
 
 class WangyiyunmusicPipeline(object):
     def open_spider(self, spider):
-        self.workbook = xlsxwriter.Workbook('D:/爬虫数据/'+"wangyiyun"+'.xlsx')  # 创建一个Excel文件
-        self.worksheet = self.workbook.add_worksheet()  # 创建一个sheet
-        self.num0=0
+        pass
 
     def process_item(self, item, spider):
-        self.num0 = self.num0 + 1
-        row = 'A' + str(self.num0)
-        data = [item['nickname'], item['userId'], item['content']]
-        self.worksheet.write_row(row, data)
+        self.f = open("D:/爬虫数据/"+item['id']+'.txt', 'a')
+        try:
+            line = item['content'] + '\n'
+            self.f.write(line)
+        except:
+            pass
         return item
 
+
     def close_spider(self, spider):
-        self.workbook.close()
+        self.f.close()
+        pass

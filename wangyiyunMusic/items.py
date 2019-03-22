@@ -14,10 +14,11 @@ class WangyiyunmusicItem(scrapy.Item):
     nickname = scrapy.Field()
     userId = scrapy.Field()
     content = scrapy.Field()
+    id = scrapy.Field()
     pass
 
 class musiclistItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
+    name = scrapy.Field()
     id = scrapy.Field()
     pass
