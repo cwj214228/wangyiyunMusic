@@ -13,7 +13,7 @@ class WangyiyunmusicPipeline(object):
         pass
 
     def process_item(self, item, spider):
-        self.f = open("D:/爬虫数据/"+item['id']+'.txt', 'a')
+        self.f = open("D:/爬虫数据/"+str(item['name'])+'.txt', 'a')
         try:
             line = item['content'] + '\n'
             self.f.write(line)
