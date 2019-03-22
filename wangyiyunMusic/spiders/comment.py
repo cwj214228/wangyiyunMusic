@@ -28,7 +28,7 @@ class CommentSpider(scrapy.Spider):
             musicItem['id'] = music['id']
             musicItem['name'] = music['name']
             thisip = random.choice(IPPOOL)
-            for offset in range(0,1):
+            for offset in range(0,100):
                 limit = '20'
                 offset = offset + 1
                 url = 'http://musicapi.leanapp.cn/comment/music?' + \
